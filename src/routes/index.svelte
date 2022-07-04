@@ -1,2 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Map from '$lib/map/Map.svelte';
+</script>
+
+<main id="home-page">
+	<div id="map-container">
+		<Map />
+	</div>
+</main>
+
+<style>
+	#map-container {
+		position: fixed;
+		width: 90%;
+		left: 10%;
+        top: 0;
+	}
+</style>
