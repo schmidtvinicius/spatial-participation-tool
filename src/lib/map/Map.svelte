@@ -1,31 +1,49 @@
-<script>
-    import { onMount } from 'svelte';
-    import { browser } from '$app/env';
-	let map;
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { browser } from '$app/env';
+	import type L from 'leaflet';
 
-    onMount(async () => {
-        if(browser) {
-            const L = await import('leaflet');
+	export let center: L.LatLngTuple = [52.156111, 5.387827];
+    export let zoom: number = 10;
+	export let maxBounds: L.LatLngBoundsExpression = [
+		[50.750417, 3.358333],
+		[53.555, 7.227778]
+	];
+	export let zoomControl: boolean = true;
+	export let scrollWheelZoom: boolean = true;
+	export let dragging: boolean = true;
 
-            const map = L.map('map').setView([51.505, -0.09], 13);
+	onMount(async () => {
+		if (browser) {
+			const L = await import('leaflet');
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
+			const mapProps: L.MapOptions = {
+				maxBounds,
+				zoomControl,
+				scrollWheelZoom,
+				dragging,
+                center,
+                zoom,
+			};
 
-            L.marker([51.5, -0.09]).addTo(map)
-                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-                .openPopup();
-        }
-    });
+			const map = L.map('map', mapProps);
+
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution:
+					'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			}).addTo(map);
+
+			map.setMinZoom(map.getBoundsZoom(map.getBounds(), true));
+		}
+	});
 </script>
 
-<div id="map"></div>
+<div id="map" />
 
 <style>
-    @import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
-    #map {
-        width: 100%;
-        height: 100vh;
-    }
+	@import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
+	#map {
+		width: 100%;
+		height: 100vh;
+	}
 </style>
