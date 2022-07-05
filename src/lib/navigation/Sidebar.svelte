@@ -1,10 +1,11 @@
 <script>
 	import logo from '$lib/assets/images/logo.png';
+	import SidebarItem from './SidebarItem.svelte';
 </script>
 
 <nav id="sidebar">
 	<div class="sidebar-top">
-		<img class="logo" src={logo} alt="The application logo" />
+		<img src={logo} alt="The application logo" />
 		<h1 class="app-name">Spatial Quality</h1>
 	</div>
 	<ul>
@@ -12,6 +13,7 @@
 		<li>2</li>
 		<li>3</li>
 		<li>4</li>
+		<SidebarItem />
 	</ul>
 </nav>
 
@@ -33,7 +35,7 @@
 		padding-top: 10px;
 	}
 
-	.logo {
+	img {
 		width: 50%;
 		background-color: white;
 		display: block;
