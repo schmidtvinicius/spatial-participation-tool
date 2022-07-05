@@ -19,22 +19,28 @@
 	<div class="sidebar-items">
 		<SidebarItem icon={faHouse} name="Home" active={true} />
 		<SidebarItem icon={faEnvelope} name="Contact" />
+		<div class="auth-item">
+			<SidebarItem icon={faArrowRightToBracket} name="Login" />
+		</div>
 	</div>
 </nav>
 
 <style>
 	#sidebar {
+		display: flex;
+		flex-direction: column;
 		position: fixed;
-		min-height: 100vh;
+		height: 100vh;
 		width: 10%;
 		margin: 0;
 		background-color: white;
-		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 		left: 0;
 		top: 0;
 	}
 
 	.sidebar-top {
+		flex: 0;
+		height: fit-content;
 		background-color: var(--myBlue);
 		padding-bottom: 10px;
 		padding-top: 10px;
@@ -54,8 +60,14 @@
 	}
 
 	.sidebar-items {
+		flex: 1;
 		padding-top: 1em;
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.auth-item {
+		margin-top: auto;
 	}
 </style>
