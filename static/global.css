@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'LatoRegular';
+    src: local('Lato'), url(../src/lib/assets/fonts/Lato/Lato-Regular.ttf) format('opentype');
+}
+
+@font-face {
+    font-family: 'LatoLight';
+    src: local('Lato'), url(../src/lib/assets/fonts/Lato/Lato-Light.ttf) format('opentype');
+}
+
+:root {
+    --myBlue: #004174;
+    --mySea: #007888;
+    --myDarkBlue: #00233D;
+    --myDarkSea: #00363D;
+    --myGreen: #258003;
+    --myRed: #C92318;
+    --myBoxShadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 -2px 4px rgba(0, 0, 0, 0.10);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: LatoLight, serif;
+}
+
+h1 {
+    font-size: 20pt;
+}
+
+h2 {
+    font-size: 12pt;
+}
