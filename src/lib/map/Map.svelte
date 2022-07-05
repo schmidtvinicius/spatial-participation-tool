@@ -42,6 +42,7 @@
 <style>
 	@import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
 	#map {
+		z-index: 1;
 		width: 100%;
 		height: 100vh;
 	}
