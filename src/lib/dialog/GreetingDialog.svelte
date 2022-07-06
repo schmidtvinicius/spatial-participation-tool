@@ -1,23 +1,31 @@
 <script lang="ts">
-	import {
-		WELCOME_TEXT,
-		EXPLANATION_PARAGRAPH,
-		ACCESS_CODE_LABEL,
-		ACCESS_CODE_PLACEHOLDER
-	} from '$lib/assets/text/strings';
+	import { WELCOME_TEXT, EXPLANATION_PARAGRAPH, PLACE_GENERAL_PIN } from '$lib/assets/text/strings';
 	import JoinProjectForm from '$lib/form/JoinProjectForm.svelte';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faClose } from '@fortawesome/free-solid-svg-icons';
+	import OrBlock from './OrBlock.svelte';
+	import ToggleButton from './ToggleButton.svelte';
+	import SubmitButton from '$lib/form/SubmitButton.svelte';
+
+	let showDialog = true;
 </script>
 
-<div class="dialog">
-	<div class="action-menu">
-		<Fa icon={faClose} size="2x" />
+{#if showDialog}
+	<div class="dialog">
+		<div class="action-menu">
+			<div class="close-action" on:click={() => (showDialog = false)}>
+				<Fa icon={faClose} size="2x" />
+			</div>
+		</div>
+		<h1>{WELCOME_TEXT}</h1>
+		<p>{EXPLANATION_PARAGRAPH}</p>
+		<JoinProjectForm />
+		<OrBlock />
+		<SubmitButton content={PLACE_GENERAL_PIN} />
 	</div>
-	<h1>{WELCOME_TEXT}</h1>
-	<p>{EXPLANATION_PARAGRAPH}</p>
-	<JoinProjectForm />
-</div>
+{:else}
+	<ToggleButton on:toggle={() => showDialog=true} />
+{/if}
 
 <style>
 	.dialog {
@@ -37,6 +45,10 @@
 		padding-top: 0.75em;
 	}
 
+	.close-action {
+		cursor: pointer;
+	}
+
 	h1 {
 		text-align: center;
 		color: var(--myDarkBlue);
@@ -45,5 +57,6 @@
 	p {
 		text-align: justify;
 		color: var(--myDarkBlue);
+		margin-top: 0.5em;
 	}
 </style>
