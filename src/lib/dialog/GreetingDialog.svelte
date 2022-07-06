@@ -5,7 +5,7 @@
 		ACCESS_CODE_LABEL,
 		ACCESS_CODE_PLACEHOLDER
 	} from '$lib/assets/text/strings';
-	import TextField from '$lib/form/TextField.svelte';
+	import JoinProjectForm from '$lib/form/JoinProjectForm.svelte';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faClose } from '@fortawesome/free-solid-svg-icons';
 </script>
@@ -16,17 +16,7 @@
 	</div>
 	<h1>{WELCOME_TEXT}</h1>
 	<p>{EXPLANATION_PARAGRAPH}</p>
-	<div>
-		<form>
-			<TextField
-				id="access-code"
-				name="access_code"
-				placeholder={ACCESS_CODE_PLACEHOLDER}
-				required={true}
-				label={ACCESS_CODE_LABEL}
-			/>
-		</form>
-	</div>
+	<JoinProjectForm />
 </div>
 
 <style>
@@ -34,8 +24,8 @@
 		display: flex;
 		flex-direction: column;
 		height: fit-content;
-		width: 20em;
-		padding: 0 1em;
+		width: 25em;
+		padding: 1em 1em;
 		background-color: #ffffff;
 		box-shadow: var(--myBoxShadow);
 		border-radius: 10px;
@@ -49,17 +39,11 @@
 
 	h1 {
 		text-align: center;
-		color: var(--myDarkBlue)
+		color: var(--myDarkBlue);
 	}
 
 	p {
 		text-align: justify;
-		color: var(--myDarkBlue)
-	}
-
-	form {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+		color: var(--myDarkBlue);
 	}
 </style>
