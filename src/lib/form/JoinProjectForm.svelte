@@ -1,9 +1,8 @@
 <script>
 	import {
-		WELCOME_TEXT,
-		EXPLANATION_PARAGRAPH,
 		ACCESS_CODE_LABEL,
-		ACCESS_CODE_PLACEHOLDER
+		ACCESS_CODE_PLACEHOLDER,
+        PARTICIPATE
 	} from '$lib/assets/text/strings';
 	import TextField from './TextField.svelte';
 	import SubmitButton from './SubmitButton.svelte';
@@ -20,7 +19,7 @@
 		/>
 	</div>
     <div class="submit-button">
-        <SubmitButton />
+        <SubmitButton content={PARTICIPATE}/>
     </div>
 </form>
 
