@@ -43,10 +43,19 @@ label {
     color: var(--mySea)
 }
 
-input {
+input,
+button {
+    border-radius: 5px;
+    border-width: 1px;
+    height: 40px;
+    padding: 0px;
     font-family: LatoRegular, serif;
     font-size: 12pt;
     color: var(--myDarkBlue)
+}
+
+button {
+    cursor: pointer;
 }
 
 h1 {
