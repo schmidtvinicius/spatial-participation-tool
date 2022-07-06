@@ -18,16 +18,13 @@
 	div {
 		display: flex;
 		flex-direction: column;
-		padding: 1em 0;
 	}
 
 	input {
 		margin-top: 0.5em;
 		padding-left: 1em;
-		border-radius: 5px;
-		border-width: 1px;
 		border-color: lightgray;
-		height: 3em;
 		vertical-align: top;
+		width: 100%;
 	}
 </style>
