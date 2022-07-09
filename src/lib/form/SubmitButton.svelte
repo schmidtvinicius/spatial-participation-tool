@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { PARTICIPATE } from '$lib/assets/text/strings';
 	export let content = 'Submit';
 </script>
 
