@@ -34,6 +34,7 @@
 		width: 10%;
 		margin: 0;
 		background-color: white;
+		box-shadow: var(--myBoxShadow);
 		left: 0;
 		top: 0;
 	}
