@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { WELCOME_TEXT, EXPLANATION_PARAGRAPH, PLACE_GENERAL_PIN } from '$lib/assets/text/strings';
+	import { NEW_GENERAL_PIN_PATH } from '$lib/assets/text/paths';
 	import JoinProjectForm from '$lib/form/JoinProjectForm.svelte';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faClose } from '@fortawesome/free-solid-svg-icons';
@@ -21,7 +22,9 @@
 		<p>{EXPLANATION_PARAGRAPH}</p>
 		<JoinProjectForm />
 		<OrBlock />
-		<SubmitButton content={PLACE_GENERAL_PIN} />
+		<a href={NEW_GENERAL_PIN_PATH}>
+			<SubmitButton content={PLACE_GENERAL_PIN} />
+		</a>
 	</div>
 {:else}
 	<ToggleButton on:toggle={() => showDialog=true} />

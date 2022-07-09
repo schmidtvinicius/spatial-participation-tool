@@ -2,6 +2,7 @@
 	import logo from '$lib/assets/images/logo.png';
 	import SidebarItem from './SidebarItem.svelte';
 	import { faArrowRightToBracket, faEnvelope, faHouse } from '@fortawesome/free-solid-svg-icons';
+	import { HOME_PATH, CONTACT_PATH, LOGIN_PATH } from '$lib/assets/text/paths';
 
 	enum ItemName {
 		Home = 'Home',
@@ -22,14 +23,14 @@
 			icon={faHouse}
 			name={ItemName.Home}
 			active={activeItem === ItemName.Home}
-			link="/"
+			link={HOME_PATH}
 			on:changeActiveItem={() => (activeItem = ItemName.Home)}
 		/>
 		<SidebarItem
 			icon={faEnvelope}
 			name={ItemName.Contact}
 			active={activeItem === ItemName.Contact}
-			link="contact"
+			link={CONTACT_PATH}
 			on:changeActiveItem={() => (activeItem = ItemName.Contact)}
 		/>
 		<div class="auth-item">
@@ -37,7 +38,7 @@
 				icon={faArrowRightToBracket}
 				name={ItemName.Login}
 				active={activeItem === ItemName.Login}
-				link="login"
+				link={LOGIN_PATH}
 				on:changeActiveItem={() => (activeItem = ItemName.Login)}
 			/>
 		</div>
