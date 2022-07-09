@@ -21,7 +21,7 @@
 	}
 
 	.greeting-dialog {
-		right: 2%;
+		right: 1.5%;
 		bottom: 2%;
 		position: fixed;
 		z-index: 2;
