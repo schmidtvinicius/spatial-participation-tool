@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
 	import logo from '$lib/assets/images/logo.png';
 	import SidebarItem from './SidebarItem.svelte';
-	import {
-		faArrowRightToBracket,
-		faFile,
-		faEnvelope,
-		faHouse,
-		faCircleXmark,
-		faQuestion
-	} from '@fortawesome/free-solid-svg-icons';
+	import { faArrowRightToBracket, faEnvelope, faHouse } from '@fortawesome/free-solid-svg-icons';
+
+	enum ItemName {
+		Home = 'Home',
+		Contact = 'Contact',
+		Login = 'Login'
+	}
+
+	let activeItem = ItemName.Home;
 </script>
 
 <nav id="sidebar">
@@ -17,10 +18,28 @@
 		<h2 class="app-name">Spatial Quality</h2>
 	</div>
 	<div class="sidebar-items">
-		<SidebarItem icon={faHouse} name="Home" active={true} link="/" />
-		<SidebarItem icon={faEnvelope} name="Contact" link="contact" />
+		<SidebarItem
+			icon={faHouse}
+			name={ItemName.Home}
+			active={activeItem === ItemName.Home}
+			link="/"
+			on:changeActiveItem={() => (activeItem = ItemName.Home)}
+		/>
+		<SidebarItem
+			icon={faEnvelope}
+			name={ItemName.Contact}
+			active={activeItem === ItemName.Contact}
+			link="contact"
+			on:changeActiveItem={() => (activeItem = ItemName.Contact)}
+		/>
 		<div class="auth-item">
-			<SidebarItem icon={faArrowRightToBracket} name="Login" link="login" />
+			<SidebarItem
+				icon={faArrowRightToBracket}
+				name={ItemName.Login}
+				active={activeItem === ItemName.Login}
+				link="login"
+				on:changeActiveItem={() => (activeItem = ItemName.Login)}
+			/>
 		</div>
 	</div>
 </nav>

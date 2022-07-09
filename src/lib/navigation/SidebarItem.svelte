@@ -1,14 +1,17 @@
 <script lang="ts">
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+	import { createEventDispatcher } from 'svelte';
 
 	export let icon: IconDefinition;
 	export let name: string;
 	export let link: string;
 	export let active = false;
+
+	const dispatch = createEventDispatcher();
 </script>
 
-<a class={active ? 'active' : ''} href={link}>
+<a class={active ? 'active' : ''} href={link} on:click={() => dispatch('changeActiveItem')}>
 	<Fa {icon} size="1.8x" />
 	<p>{name}</p>
 </a>
