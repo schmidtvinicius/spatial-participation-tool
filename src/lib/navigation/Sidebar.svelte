@@ -17,10 +17,10 @@
 		<h2 class="app-name">Spatial Quality</h2>
 	</div>
 	<div class="sidebar-items">
-		<SidebarItem icon={faHouse} name="Home" active={true} />
-		<SidebarItem icon={faEnvelope} name="Contact" />
+		<SidebarItem icon={faHouse} name="Home" active={true} link="/" />
+		<SidebarItem icon={faEnvelope} name="Contact" link="contact" />
 		<div class="auth-item">
-			<SidebarItem icon={faArrowRightToBracket} name="Login" />
+			<SidebarItem icon={faArrowRightToBracket} name="Login" link="login" />
 		</div>
 	</div>
 </nav>

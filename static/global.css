@@ -65,3 +65,11 @@ h1 {
 h2 {
     font-size: 16pt;
 }
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
