@@ -3,6 +3,7 @@
 	export let id: string;
 	export let placeholder: string;
 	export let required = false;
+	export let readOnly = false;
 	export let label: string;
 	export let onInvalid = (e: Event) => {
 		console.log(e);
@@ -11,7 +12,7 @@
 
 <div>
 	<label for={id}>{label}</label>
-	<input type="text" {name} {id} {placeholder} {required} {onInvalid} />
+	<input type="text" {name} {id} {placeholder} {required} {onInvalid} {readOnly} />
 </div>
 
 <style>
@@ -25,6 +26,5 @@
 		padding-left: 1em;
 		border-color: lightgray;
 		vertical-align: top;
-		width: 100%;
 	}
 </style>
