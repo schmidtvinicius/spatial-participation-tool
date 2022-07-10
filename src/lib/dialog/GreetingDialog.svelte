@@ -22,7 +22,6 @@
 		<p>{EXPLANATION_PARAGRAPH}</p>
 		<JoinProjectForm />
 		<OrBlock />
-		<!-- TODO: Change this button to be just an anchor tag -->
 		<NavButton href={NEW_GENERAL_PIN_PATH} content={PLACE_GENERAL_PIN} />
 	</div>
 {:else}
