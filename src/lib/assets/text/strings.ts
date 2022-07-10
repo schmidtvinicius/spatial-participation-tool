@@ -6,3 +6,4 @@ export const EXPLANATION_PARAGRAPH = 'We are happy to help you give your opinion
 export const ACCESS_CODE_PLACEHOLDER = 'Enter the code';
 export const ACCESS_CODE_LABEL = 'Access code';
 export const PARTICIPATE = 'Participate';
+export const PIN_ADDRESS_PLACEHOLDER = 'Click on the map to select an address';
