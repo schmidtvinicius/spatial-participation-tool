@@ -44,6 +44,6 @@
 	#map {
 		z-index: 1;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 	}
 </style>

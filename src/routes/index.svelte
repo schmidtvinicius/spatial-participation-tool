@@ -16,6 +16,7 @@
 	.map-container {
 		position: fixed;
 		width: 90%;
+		height: 100vh;
 		left: 10%;
 		top: 0;
 	}
