@@ -6,7 +6,7 @@
 	import { faClose } from '@fortawesome/free-solid-svg-icons';
 	import OrBlock from './OrBlock.svelte';
 	import ToggleButton from './ToggleButton.svelte';
-	import SubmitButton from '$lib/form/SubmitButton.svelte';
+	import NavButton from '$lib/navigation/NavButton.svelte';
 
 	let showDialog = true;
 </script>
@@ -22,12 +22,11 @@
 		<p>{EXPLANATION_PARAGRAPH}</p>
 		<JoinProjectForm />
 		<OrBlock />
-		<a href={NEW_GENERAL_PIN_PATH}>
-			<SubmitButton content={PLACE_GENERAL_PIN} />
-		</a>
+		<!-- TODO: Change this button to be just an anchor tag -->
+		<NavButton href={NEW_GENERAL_PIN_PATH} content={PLACE_GENERAL_PIN} />
 	</div>
 {:else}
-	<ToggleButton on:toggle={() => showDialog=true} />
+	<ToggleButton on:toggle={() => (showDialog = true)} />
 {/if}
 
 <style>

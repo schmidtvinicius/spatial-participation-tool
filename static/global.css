@@ -66,6 +66,11 @@ h2 {
     font-size: 16pt;
 }
 
+a {
+    font-family: LatoRegular, serif;
+    font-size: 12pt;
+}
+
 a,
 a:hover,
 a:focus,
