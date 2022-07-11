@@ -3,14 +3,12 @@
 	import GreetingDialog from '$lib/dialog/GreetingDialog.svelte';
 </script>
 
-<main>
-	<div class="page">
-		<Map />
-		<div class="greeting-dialog">
-			<GreetingDialog />
-		</div>
+<div class="page">
+	<Map />
+	<div class="greeting-dialog">
+		<GreetingDialog />
 	</div>
-</main>
+</div>
 
 <style>
 	.greeting-dialog {
