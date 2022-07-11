@@ -4,13 +4,14 @@
 	export let placeholder: string;
 	export let required = false;
 	export let disabled = false;
-	export let label: string;
+	export let value = '';
+	export let label = '';
 	export let onInvalid = (e: Event) => {};
 </script>
 
 <div class="input-field">
 	<label for={id}>{required ? `${label}*` : label}</label>
-	<input type="text" {name} {id} {placeholder} {required} {onInvalid} {disabled} />
+	<input type="text" {name} {id} {placeholder} {required} {onInvalid} {disabled} {value} />
 </div>
 
 <style>
