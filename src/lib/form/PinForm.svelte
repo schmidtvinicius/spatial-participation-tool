@@ -2,6 +2,7 @@
 	import { GENERAL_FORM_HEADER } from '$lib/assets/text/strings';
 	import LocationInput from '$lib/form/LocationInput.svelte';
 	import TextField from '$lib/form/TextField.svelte';
+    import TextArea from '$lib/form/TextArea.svelte';
 </script>
 
 <form>
@@ -13,6 +14,7 @@
 	<section>
 		<h2>How do you like this place?</h2>
 		<TextField name="Title" id="pin-title" placeholder="Title" required={true} label={'Title'} />
+        <TextArea name="Motivation" id="motivation" placeholder="Motivation" required={true} label="Motivation" />
 	</section>
 </form>
 
