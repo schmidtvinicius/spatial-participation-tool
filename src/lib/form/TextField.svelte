@@ -10,17 +10,12 @@
 	};
 </script>
 
-<div>
-	<label for={id}>{label}</label>
+<div class="input-field">
+	<label for={id}>{required ? `${label}*` : label}</label>
 	<input type="text" {name} {id} {placeholder} {required} {onInvalid} {readOnly} />
 </div>
 
 <style>
-	div {
-		display: flex;
-		flex-direction: column;
-	}
-
 	input {
 		margin-top: 0.5em;
 		padding-left: 1em;
