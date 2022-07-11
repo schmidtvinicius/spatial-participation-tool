@@ -3,6 +3,7 @@
 	import { browser } from '$app/env';
 	import type L from 'leaflet';
 	import type { LeafletMouseEvent } from 'leaflet';
+	import { createEventDispatcher } from 'svelte';
 
 	export let center: L.LatLngTuple = [52.156111, 5.387827];
 	export let maxBounds: L.LatLngBoundsExpression = [
@@ -12,9 +13,8 @@
 	export let zoomControl = true;
 	export let scrollWheelZoom = true;
 	export let dragging = true;
-	export let onClick = (e: LeafletMouseEvent) => {
-		console.log(e);
-	};
+
+	const dispatch = createEventDispatcher();
 
 	onMount(async () => {
 		if (browser) {
@@ -38,7 +38,7 @@
 
 			map.setMinZoom(map.getBoundsZoom(maxBounds, true));
 
-			map.on('click', onClick);
+			map.on('click', (e: LeafletMouseEvent) => dispatch('mapClicked', { latLng: e.latlng }));
 		}
 	});
 </script>

@@ -2,13 +2,23 @@
 	import Map from '$lib/map/Map.svelte';
 	import TextField from './TextField.svelte';
 	import { PIN_ADDRESS_PLACEHOLDER } from '$lib/assets/text/strings';
+	import NumberField from './NumberField.svelte';
 
 	export let required = false;
+	let pinLat: number;
+	let pinLng: number;
+
+	const handleMapClicked = (e: CustomEvent) => {
+		pinLat = e.detail.latLng.lat;
+		pinLng = e.detail.latLng.lng;
+		console.log(pinLat);
+		console.log(pinLng);
+	};
 </script>
 
 <div id="location-input">
 	<div class="map-container">
-		<Map />
+		<Map on:mapClicked={handleMapClicked} />
 	</div>
 	<TextField
 		name="Pin address"
@@ -19,20 +29,8 @@
 		{required}
 	/>
 	<div class="coordinates-section">
-		<TextField
-			name="Pin address"
-			id="pin-address"
-			placeholder={PIN_ADDRESS_PLACEHOLDER}
-			label="Address"
-			{required}
-		/>
-		<TextField
-			name="Pin address"
-			id="pin-address"
-			placeholder={PIN_ADDRESS_PLACEHOLDER}
-			label="Address"
-			{required}
-		/>
+		<NumberField name="Pin latitude" id="pin-lat" {required} bind:value={pinLat} />
+		<NumberField name="Pin longitude" id="pin-lng" {required} bind:value={pinLng} />
 	</div>
 </div>
 
