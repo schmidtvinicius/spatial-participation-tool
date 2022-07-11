@@ -57,7 +57,7 @@
 		box-shadow: var(--myBoxShadow);
 		left: 0;
 		top: 0;
-		overflow: scroll;
+		overflow-y: auto;
 	}
 
 	.sidebar-top {
