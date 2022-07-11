@@ -2,6 +2,8 @@
 	import Map from '$lib/map/Map.svelte';
 	import TextField from './TextField.svelte';
 	import { PIN_ADDRESS_PLACEHOLDER } from '$lib/assets/text/strings';
+
+	export let required = false;
 </script>
 
 <div id="location-input">
@@ -14,6 +16,7 @@
 		placeholder={PIN_ADDRESS_PLACEHOLDER}
 		readOnly={true}
         label="Address"
+		{required}
 	/>
 </div>
 

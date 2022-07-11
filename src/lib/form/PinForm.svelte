@@ -9,7 +9,7 @@
 	<h1>{GENERAL_FORM_HEADER}</h1>
 	<section>
 		<h2>Location</h2>
-		<LocationInput />
+		<LocationInput required={true} />
 	</section>
 	<section>
 		<h2>How do you like this place?</h2>
