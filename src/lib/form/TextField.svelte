@@ -3,7 +3,7 @@
 	export let id: string;
 	export let placeholder: string;
 	export let required = false;
-	export let readOnly = false;
+	export let disabled = false;
 	export let label: string;
 	export let onInvalid = (e: Event) => {
 		console.log(e);
@@ -12,7 +12,7 @@
 
 <div class="input-field">
 	<label for={id}>{required ? `${label}*` : label}</label>
-	<input type="text" {name} {id} {placeholder} {required} {onInvalid} {readOnly} />
+	<input type="text" {name} {id} {placeholder} {required} {onInvalid} {disabled} />
 </div>
 
 <style>
