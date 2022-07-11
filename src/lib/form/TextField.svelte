@@ -5,9 +5,7 @@
 	export let required = false;
 	export let disabled = false;
 	export let label: string;
-	export let onInvalid = (e: Event) => {
-		console.log(e);
-	};
+	export let onInvalid = (e: Event) => {};
 </script>
 
 <div class="input-field">
