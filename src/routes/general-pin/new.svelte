@@ -5,3 +5,10 @@
 <div class="page">
 	<PinForm />
 </div>
+
+<style>
+	div {
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+</style>
