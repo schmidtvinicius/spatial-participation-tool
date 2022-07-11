@@ -2,15 +2,19 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
 	import type L from 'leaflet';
+	import type { LeafletMouseEvent } from 'leaflet';
 
 	export let center: L.LatLngTuple = [52.156111, 5.387827];
 	export let maxBounds: L.LatLngBoundsExpression = [
 		[50.750417, 3.358333],
 		[53.555, 7.227778]
 	];
-	export let zoomControl: boolean = true;
-	export let scrollWheelZoom: boolean = true;
-	export let dragging: boolean = true;
+	export let zoomControl = true;
+	export let scrollWheelZoom = true;
+	export let dragging = true;
+	export let onClick = (e: LeafletMouseEvent) => {
+		console.log(e);
+	};
 
 	onMount(async () => {
 		if (browser) {
@@ -33,6 +37,8 @@
 			}).addTo(map);
 
 			map.setMinZoom(map.getBoundsZoom(maxBounds, true));
+
+			map.on('click', onClick);
 		}
 	});
 </script>
