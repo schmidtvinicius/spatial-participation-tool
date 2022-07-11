@@ -2,18 +2,6 @@
 	import PinForm from '$lib/form/PinForm.svelte';
 </script>
 
-<div>
+<div class="page">
 	<PinForm />
 </div>
-
-<style>
-	div {
-		position: fixed;
-		width: 90%;
-		height: 100vh;
-		left: 10%;
-		top: 0;
-		overflow: scroll;
-
-	}
-</style>

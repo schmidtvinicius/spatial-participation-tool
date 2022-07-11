@@ -4,7 +4,7 @@
 </script>
 
 <main>
-	<div class="map-container">
+	<div class="page">
 		<Map />
 		<div class="greeting-dialog">
 			<GreetingDialog />
@@ -13,14 +13,6 @@
 </main>
 
 <style>
-	.map-container {
-		position: fixed;
-		width: 90%;
-		height: 100vh;
-		left: 10%;
-		top: 0;
-	}
-
 	.greeting-dialog {
 		right: 1.5%;
 		bottom: 2%;
