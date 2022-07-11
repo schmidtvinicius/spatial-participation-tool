@@ -86,7 +86,6 @@ div.page {
     height: 100vh;
     left: 10%;
     top: 0;
-    overflow: scroll;
 }
 
 div.input-field {
