@@ -14,15 +14,35 @@
 		name="Pin address"
 		id="pin-address"
 		placeholder={PIN_ADDRESS_PLACEHOLDER}
-		readOnly={true}
-        label="Address"
+		disabled={true}
+		label="Address"
 		{required}
 	/>
+	<div class="coordinates-section">
+		<TextField
+			name="Pin address"
+			id="pin-address"
+			placeholder={PIN_ADDRESS_PLACEHOLDER}
+			label="Address"
+			{required}
+		/>
+		<TextField
+			name="Pin address"
+			id="pin-address"
+			placeholder={PIN_ADDRESS_PLACEHOLDER}
+			label="Address"
+			{required}
+		/>
+	</div>
 </div>
 
 <style>
 	.map-container {
 		height: 50vh;
 		margin-bottom: 1em;
+	}
+
+	.coordinates-section {
+		display: none;
 	}
 </style>
