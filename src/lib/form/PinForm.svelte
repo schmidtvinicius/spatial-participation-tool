@@ -3,13 +3,25 @@
 	import LocationInput from '$lib/form/LocationInput.svelte';
 	import TextField from '$lib/form/TextField.svelte';
     import TextArea from '$lib/form/TextArea.svelte';
+
+	let title: string;
+	let motivation: string;
+	let lat: number;
+	let lng: number;
+
+	const handleMapClicked = (e: CustomEvent) => {
+		lat = e.detail.latLng.lat;
+		lng = e.detail.latLng.lng;
+		console.log(lat);
+		console.log(lng);
+	};
 </script>
 
 <form>
 	<h1>{GENERAL_FORM_HEADER}</h1>
 	<section>
 		<h2>Location</h2>
-		<LocationInput required={true} />
+		<LocationInput on:mapClicked={handleMapClicked} />
 	</section>
 	<section>
 		<h2>How do you like this place?</h2>
