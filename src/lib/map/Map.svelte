@@ -38,7 +38,7 @@
 
 			map.setMinZoom(map.getBoundsZoom(maxBounds, true));
 
-			map.on('click', (e: LeafletMouseEvent) => dispatch('mapClicked', { latLng: e.latlng }));
+			map.on('click', (e: LeafletMouseEvent) => dispatch('click', { latLng: e.latlng }));
 		}
 	});
 </script>
