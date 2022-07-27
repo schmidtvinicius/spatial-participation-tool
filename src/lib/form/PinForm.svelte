@@ -3,6 +3,7 @@
 	import LocationInput from '$lib/form/LocationInput.svelte';
 	import TextField from '$lib/form/TextField.svelte';
 	import TextArea from '$lib/form/TextArea.svelte';
+import FeedbackRadioGroup from './FeedbackRadioGroup.svelte';
 
 	let title: string;
 	let motivation: string;
@@ -24,7 +25,8 @@
 		<LocationInput on:mapClicked={handleMapClicked} />
 	</section>
 	<section>
-		<h2>How do you like this place?</h2>
+		<h2>What do you think of this place?</h2>
+		<FeedbackRadioGroup />
 		<TextField name="Title" id="pin-title" placeholder="Title" required={true} label={'Title'} />
 		<TextArea
 			name="Motivation"
