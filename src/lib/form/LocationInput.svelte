@@ -11,7 +11,6 @@
 
 	const handleMapClicked = async (e: CustomEvent) => {
 		currentAddress = await fetchAddress(e.detail.latLng.lat, e.detail.latLng.lng);
-		console.log(currentAddress);
 		dispatch('mapClicked', { latLng: e.detail.latLng });
 	};
 </script>
