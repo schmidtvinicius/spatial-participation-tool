@@ -7,3 +7,4 @@ export const ACCESS_CODE_PLACEHOLDER = 'Enter the code';
 export const ACCESS_CODE_LABEL = 'Access code';
 export const PARTICIPATE = 'Participate';
 export const PIN_ADDRESS_PLACEHOLDER = 'Click on the map to select an address';
+export const ADDRESS_NOT_FOUND = 'Sorry, but we were not able to find that address :(';
