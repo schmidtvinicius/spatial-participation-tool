@@ -2,8 +2,10 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
 	import type L from 'leaflet';
-	import type { LeafletMouseEvent } from 'leaflet';
+	import type { LeafletMouseEvent, Marker } from 'leaflet';
 	import { createEventDispatcher } from 'svelte';
+	import fetchAddress from '$lib/assets/_external/_addressUtil';
+	import { PIN_OUT_OF_BOUNDS } from '$lib/assets/text/strings';
 
 	export let center: L.LatLngTuple = [52.156111, 5.387827];
 	export let maxBounds: L.LatLngBoundsExpression = [
@@ -13,6 +15,8 @@
 	export let zoomControl = true;
 	export let scrollWheelZoom = true;
 	export let dragging = true;
+
+	let placeableMarker: Marker;
 
 	const dispatch = createEventDispatcher();
 
@@ -38,7 +42,16 @@
 
 			map.setMinZoom(map.getBoundsZoom(maxBounds, true));
 
-			map.on('click', (e: LeafletMouseEvent) => dispatch('click', { latLng: e.latlng }));
+			map.on('click', (e: LeafletMouseEvent) => {
+				fetchAddress(e.latlng.lat, e.latlng.lng)
+					.then((address) => {
+						if (placeableMarker) map.removeLayer(placeableMarker);
+						placeableMarker = L.marker(e.latlng).addTo(map);
+						map.flyTo(e.latlng, map.getZoom());
+						dispatch('click', { latLng: e.latlng, address: address });
+					})
+					.catch(() => alert(PIN_OUT_OF_BOUNDS));
+			});
 		}
 	});
 </script>

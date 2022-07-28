@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Map from '$lib/map/Map.svelte';
 	import TextField from './TextField.svelte';
-	import fetchAddress from '$lib/assets/_external/_addressUtil';
 	import { PIN_ADDRESS_PLACEHOLDER } from '$lib/assets/text/strings';
 	import { createEventDispatcher } from 'svelte';
 
@@ -10,7 +9,7 @@
 	const dispatch = createEventDispatcher();
 
 	const handleMapClicked = async (e: CustomEvent) => {
-		currentAddress = await fetchAddress(e.detail.latLng.lat, e.detail.latLng.lng);
+		currentAddress = e.detail.address;
 		dispatch('mapClicked', { latLng: e.detail.latLng });
 	};
 </script>
