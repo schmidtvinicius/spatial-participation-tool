@@ -3,7 +3,8 @@
 	import LocationInput from '$lib/form/LocationInput.svelte';
 	import TextField from '$lib/form/TextField.svelte';
 	import TextArea from '$lib/form/TextArea.svelte';
-import FeedbackRadioGroup from './FeedbackRadioGroup.svelte';
+	import FeedbackRadioGroup from './FeedbackRadioGroup.svelte';
+	import UploadButton from '$lib/form/UploadButton.svelte';
 
 	let title: string;
 	let motivation: string;
@@ -35,6 +36,7 @@ import FeedbackRadioGroup from './FeedbackRadioGroup.svelte';
 			required={true}
 			label="Motivation"
 		/>
+		<UploadButton id="picture" name="picture" label="Picture" />
 	</section>
 </form>
 
