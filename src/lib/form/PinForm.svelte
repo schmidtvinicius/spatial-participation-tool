@@ -3,7 +3,7 @@
 	import LocationInput from '$lib/form/LocationInput.svelte';
 	import TextField from '$lib/form/TextField.svelte';
 	import TextArea from '$lib/form/TextArea.svelte';
-	import FeedbackRadioGroup from './FeedbackRadioGroup.svelte';
+	import FeedbackRadioGroup from '$lib/form/FeedbackRadioGroup.svelte';
 	import UploadButton from '$lib/form/UploadButton.svelte';
 
 	let title: string;
