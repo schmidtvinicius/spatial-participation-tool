@@ -15,6 +15,7 @@
 	export let zoomControl = true;
 	export let scrollWheelZoom = true;
 	export let dragging = true;
+	export let clickable = false;
 
 	let placeableMarker: Marker;
 
@@ -42,16 +43,18 @@
 
 			map.setMinZoom(map.getBoundsZoom(maxBounds, true));
 
-			map.on('click', (e: LeafletMouseEvent) => {
-				fetchAddress(e.latlng.lat, e.latlng.lng)
-					.then((address) => {
-						if (placeableMarker) map.removeLayer(placeableMarker);
-						placeableMarker = L.marker(e.latlng).addTo(map);
-						map.flyTo(e.latlng, map.getZoom());
-						dispatch('click', { latLng: e.latlng, address: address });
-					})
-					.catch(() => alert(PIN_OUT_OF_BOUNDS));
-			});
+			if (clickable) {
+				map.on('click', (e: LeafletMouseEvent) => {
+					fetchAddress(e.latlng.lat, e.latlng.lng)
+						.then((address) => {
+							if (placeableMarker) map.removeLayer(placeableMarker);
+							placeableMarker = L.marker(e.latlng).addTo(map);
+							map.flyTo(e.latlng, map.getZoom());
+							dispatch('click', { latLng: e.latlng, address: address });
+						})
+						.catch(() => alert(PIN_OUT_OF_BOUNDS));
+				});
+			}
 		}
 	});
 </script>

@@ -16,7 +16,7 @@
 
 <div id="location-input">
 	<div class="map-container">
-		<Map on:click={handleMapClicked} />
+		<Map on:click={handleMapClicked} clickable={true} />
 	</div>
 	<TextField
 		name="Pin address"
