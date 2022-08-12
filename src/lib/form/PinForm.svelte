@@ -14,8 +14,6 @@
 	const handleMapClicked = (e: CustomEvent) => {
 		lat = e.detail.latLng.lat;
 		lng = e.detail.latLng.lng;
-		console.log(lat);
-		console.log(lng);
 	};
 </script>
 
